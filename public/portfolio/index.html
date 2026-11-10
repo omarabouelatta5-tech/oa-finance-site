@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omar Abouelatta — AP/AR Accountant, Paymaster & Accounting Automation</title>
+<meta name="description" content="Omar Abouelatta — Accounts Payable & Receivable accountant in hotel finance, Xero Certified Specialist, and n8n accounting-automation builder.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0B0C; --ink-2:#121214; --ink-3:#1A1A1D; --line:#2A2A2E; --grid:#17171A;
+  --paper:#F5F5F2; --paper-line:#DEDED8;
+  --text:#F2F2EE; --muted:#9A9A96; --dim:#77776F; --soft:#B9B9B4;
+  --accent:#FF6A2B; --accent-2:#FF8A57; --accent-deep:#D9480F; --accent-bg:#FFE4D6;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --display:'Inter Tight',Inter,system-ui,sans-serif;
+  --body:Inter,system-ui,sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--text); font-family:var(--body); font-size:17px; line-height:1.55;
+  background-color:var(--ink);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:72px 72px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-2)}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--display);letter-spacing:-0.035em;font-weight:700}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono);letter-spacing:.06em}
+.label{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.accent{color:var(--accent)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(11,11,12,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
+.brand{font-family:var(--mono);font-size:14px;letter-spacing:.08em;color:var(--text);font-weight:600}
+.brand span{color:var(--accent)}
+.brand-x{font-weight:600}
+.navlinks{display:flex;gap:26px;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.navlinks a{color:var(--muted)}
+.navlinks a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:14px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:14px 22px;border-radius:12px;border:1px solid transparent;cursor:pointer;transition:transform .15s, background .15s, color .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--ink)}
+.btn-primary:hover{background:var(--accent-2);color:var(--ink)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-sm{padding:10px 16px;font-size:12px;border-radius:10px}
+
+/* sections */
+section{padding:110px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:52px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(38px,5vw,64px);line-height:1;max-width:760px}
+.sec-head .label{margin-bottom:18px;display:block}
+.sec-num{font-family:var(--mono);font-size:14px;color:var(--dim);letter-spacing:.06em}
+
+/* hero */
+.hero{padding:84px 0 96px}
+.hero-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:56px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:64px;align-items:center}
+.hero h1{font-size:clamp(46px,6.6vw,92px);line-height:.98;letter-spacing:-0.045em}
+.hero .lede{margin-top:30px;font-size:20px;color:var(--soft);max-width:620px;line-height:1.55}
+.hero .lede strong{color:var(--text);font-weight:600}
+.hero-cta{display:flex;gap:14px;margin-top:40px;flex-wrap:wrap}
+.avail{display:inline-flex;align-items:center;gap:10px;margin-top:34px;font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.dot{width:9px;height:9px;border-radius:50%;background:#3FD07A;box-shadow:0 0 0 4px rgba(63,208,122,.15)}
+.portrait{position:relative}
+.portrait-frame{background:var(--paper);border-radius:28px;padding:16px}
+.portrait-frame img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;background:#222}
+.portrait-meta{display:flex;justify-content:space-between;align-items:center;padding:14px 6px 2px;color:var(--ink);font-family:var(--mono);font-size:13px;letter-spacing:.06em}
+.stamp{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.1em;padding:7px 12px;border:2px solid var(--accent-deep);color:var(--accent-deep);border-radius:8px;transform:rotate(-4deg)}
+.float-card{position:absolute;left:-46px;bottom:64px;background:var(--ink-3);border:1px solid var(--line);border-radius:18px;padding:16px 20px;display:flex;gap:14px;align-items:center;box-shadow:0 20px 50px rgba(0,0,0,.45);max-width:320px}
+.float-card .ic{flex:0 0 44px;height:44px;border-radius:12px;background:var(--accent);color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:600;font-size:14px}
+.float-card p{font-size:14px;color:var(--soft);line-height:1.35}
+.float-card b{display:block;color:var(--text);font-size:15px;font-weight:600}
+
+/* numbers */
+.numbers{padding:0;border-bottom:1px solid var(--line)}
+.num-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.num{padding:44px 28px 40px;border-right:1px solid var(--line)}
+.num:first-child{padding-left:0}
+.num:last-child{border-right:0}
+.num .v{font-family:var(--display);font-weight:800;font-size:clamp(40px,4.6vw,64px);letter-spacing:-0.05em;line-height:1;color:var(--text)}
+.num .v em{font-style:normal;color:var(--accent)}
+.num .k{margin-top:14px;font-size:15px;color:var(--muted);line-height:1.4}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:64px}
+.about-grid h2{font-size:clamp(34px,4vw,52px);line-height:1.04}
+.about-text p{font-size:19px;color:var(--soft);line-height:1.65}
+.about-text p+p{margin-top:20px}
+.about-text strong{color:var(--text);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.chip{font-family:var(--mono);font-size:13px;letter-spacing:.04em;padding:8px 14px;border:1px solid var(--line);border-radius:999px;color:var(--soft);background:var(--ink-2)}
+
+/* services */
+.svc-tabs{display:flex;gap:8px;margin-bottom:34px;flex-wrap:wrap}
+.svc-tab{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:12px 18px;border-radius:999px;border:1px solid var(--line);background:var(--ink-2);color:var(--muted);cursor:pointer}
+.svc-tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--ink);font-weight:600}
+.svc-panel{display:none}
+.svc-panel.on{display:block}
+.svc-intro{font-size:18px;color:var(--soft);max-width:720px;margin-bottom:30px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:var(--ink-2);border:1px solid var(--line);border-radius:22px;padding:30px 28px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s, transform .2s}
+.card:hover{border-color:#3a3a40;transform:translateY(-2px)}
+.card .tag{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--accent);text-transform:uppercase}
+.card h3{font-size:25px;line-height:1.12;letter-spacing:-0.025em}
+.card p{font-size:16px;color:var(--soft);line-height:1.55}
+.card .proof{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--muted)}
+.card.paper{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.card.paper p{color:#55554F}
+.card.paper .proof{border-top-color:#CFCFC8;color:#6B6B64}
+.card.paper .tag{color:var(--accent-deep)}
+
+/* projects */
+.proj{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:stretch;margin-bottom:28px}
+.proj-body{background:var(--ink-2);border:1px solid var(--line);border-radius:26px;padding:40px}
+.proj-body h3{font-size:34px;line-height:1.05}
+.proj-body .stack{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}
+.proj-body ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px}
+.proj-body li{position:relative;padding-left:26px;color:var(--soft);font-size:16.5px;line-height:1.5}
+.proj-body li::before{content:"";position:absolute;left:0;top:10px;width:12px;height:2px;background:var(--accent)}
+.invoice{background:var(--paper);color:var(--ink);border-radius:26px;padding:34px 34px 30px;display:flex;flex-direction:column;gap:22px}
+.inv-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.inv-head .label{color:#6B6B64}
+.inv-head .t{font-size:22px;font-weight:600;margin-top:4px}
+.inv-table{display:flex;flex-direction:column}
+.inv-row{display:grid;grid-template-columns:minmax(0,1fr) 92px 92px;gap:10px;padding:13px 10px;margin:0 -10px;border-bottom:1px solid var(--paper-line);border-radius:8px;font-size:15.5px}
+.inv-row.h{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;color:#6B6B64;border-bottom-width:2px;padding-top:6px}
+.inv-row .n{text-align:right;font-family:var(--mono)}
+.inv-row.bad{background:var(--accent-bg)}
+.inv-row.bad .n:last-child{color:#B23A0A;font-weight:600}
+.why{background:var(--ink);color:var(--text);border-radius:14px;padding:18px 20px;display:flex;gap:14px;font-size:15px;line-height:1.45}
+.why b{font-family:var(--mono);font-size:12.5px;color:var(--accent);letter-spacing:.06em;padding-top:2px}
+.demo{margin-top:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;color:#8A8A82}
+.proj-2{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;background:var(--ink-2);border:1px solid var(--line);border-radius:26px;padding:34px 40px}
+.proj-2 h3{font-size:26px}
+.proj-2 p{color:var(--soft);margin-top:10px;max-width:760px}
+.pipeline{display:flex;gap:8px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--muted);flex-wrap:wrap}
+.pipeline span{padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--ink)}
+.pipeline i{font-style:normal;color:var(--accent)}
+
+/* experience carousel */
+.carousel{position:relative}
+.track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:8px;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 calc((100% - 40px)/3);scroll-snap-align:start;background:var(--ink-2);border:1px solid var(--line);border-radius:24px;padding:30px 28px;display:flex;flex-direction:column;gap:16px;min-height:430px}
+.slide.paper{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.slide-top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:12px;letter-spacing:.07em;color:var(--dim)}
+.slide.paper .slide-top{color:#6B6B64}
+.slide h3{font-size:26px;line-height:1.08}
+.slide .co{font-size:15px;color:var(--muted)}
+.slide.paper .co{color:#55554F}
+.slide .co b{color:var(--text);font-weight:600}
+.slide.paper .co b{color:var(--ink)}
+.slide ul{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px}
+.slide li{position:relative;padding-left:20px;font-size:15px;line-height:1.5;color:var(--soft)}
+.slide.paper li{color:#3E3E39}
+.slide li::before{content:"";position:absolute;left:0;top:10px;width:9px;height:2px;background:var(--accent)}
+.slide .note{margin-top:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--dim)}
+.slide.paper .note{color:#8A8A82}
+.car-ctrl{display:flex;align-items:center;justify-content:space-between;margin-top:26px}
+.car-btns{display:flex;gap:10px}
+.car-btn{width:52px;height:52px;border-radius:14px;border:1px solid var(--line);background:var(--ink-2);color:var(--text);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.car-btn:hover{border-color:var(--accent);color:var(--accent)}
+.car-btn:disabled{opacity:.35;cursor:default;border-color:var(--line);color:var(--text)}
+.early{margin-top:30px;display:flex;gap:28px;flex-wrap:wrap;font-size:15px;color:var(--muted)}
+.early b{color:var(--soft);font-weight:500}
+
+/* tools */
+.tools{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.tool{background:var(--ink-2);border:1px solid var(--line);border-radius:18px;padding:22px 22px;display:flex;flex-direction:column;gap:8px}
+.tool .nm{font-family:var(--display);font-size:21px;font-weight:700;letter-spacing:-0.02em}
+.tool .ds{font-size:14.5px;color:var(--muted);line-height:1.45}
+.tool.hl{border-color:var(--accent)}
+.tool.hl .nm::after{content:"CERTIFIED";margin-left:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--ink);background:var(--accent);padding:3px 7px;border-radius:6px;vertical-align:middle;position:relative;top:-3px}
+
+/* certs */
+.cert-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px}
+.list-card{background:var(--ink-2);border:1px solid var(--line);border-radius:24px;padding:12px 32px}
+.li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);align-items:center}
+.li:last-child{border-bottom:0}
+.li .t{font-size:17.5px;font-weight:600}
+.li .s{font-size:14.5px;color:var(--muted);margin-top:2px}
+.li .y{font-family:var(--mono);font-size:13px;color:var(--dim);letter-spacing:.05em;text-align:right}
+.li .y.acc{color:var(--accent)}
+
+/* contact */
+.contact{border-bottom:0;padding-bottom:70px}
+.contact-box{background:var(--paper);color:var(--ink);border-radius:32px;padding:64px 60px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:center}
+.contact-box h2{font-size:clamp(40px,5vw,68px);line-height:.98;letter-spacing:-0.045em}
+.contact-box .sub{margin-top:22px;font-size:18px;color:#55554F;max-width:480px}
+.cl{display:flex;flex-direction:column;gap:12px}
+.cl-row{display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:14px;align-items:center;background:#fff;border:1px solid var(--paper-line);border-radius:16px;padding:14px 16px}
+.cl-row .k{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:#6B6B64}
+.cl-row a,.cl-row .vv{color:var(--ink);font-weight:600;font-size:15.5px;overflow-wrap:anywhere}
+.cl-row a:hover{color:var(--accent-deep)}
+.copy{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--paper-line);background:var(--paper);color:#55554F;border-radius:9px;padding:8px 11px;cursor:pointer}
+.copy:hover{border-color:var(--accent-deep);color:var(--accent-deep)}
+footer{padding:34px 0 50px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--dim)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.track{scroll-behavior:auto}}
+
+/* responsive */
+@media (max-width:1020px){
+  .hero-grid{grid-template-columns:1fr;gap:56px}
+  .portrait{max-width:440px}
+  .float-card{left:auto;right:-10px;bottom:-26px}
+  .num-grid{grid-template-columns:repeat(2,1fr)}
+  .num{border-bottom:1px solid var(--line)}
+  .num:nth-child(2){border-right:0}
+  .num:nth-child(3){padding-left:0}
+  .num:nth-child(3),.num:nth-child(4){border-bottom:0}
+  .about-grid{grid-template-columns:1fr;gap:28px}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .proj{grid-template-columns:1fr}
+  .slide{flex-basis:calc((100% - 20px)/2)}
+  .tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cert-grid{grid-template-columns:1fr}
+  .contact-box{grid-template-columns:1fr;padding:48px 36px;gap:36px}
+  .navlinks{display:none}
+}
+@media (max-width:640px){
+  body{font-size:16px;background-size:56px 56px}
+  .wrap{padding:0 20px}
+  section{padding:76px 0}
+  .hero{padding:48px 0 76px}
+  .hero-top{margin-bottom:36px}
+  .hero-top .sec-num{display:none}
+  .hero .lede{font-size:18px}
+  .float-card{position:relative;right:auto;bottom:auto;margin-top:18px;max-width:none}
+  .num{padding:30px 14px 28px}
+  .num:nth-child(odd){padding-left:0}
+  .cards{grid-template-columns:1fr}
+  .proj-body,.invoice{padding:28px 22px}
+  .inv-row{grid-template-columns:minmax(0,1fr) 74px 74px;font-size:14px}
+  .proj-2{grid-template-columns:1fr;padding:28px 22px}
+  .slide{flex-basis:88%;min-height:0}
+  .tools{grid-template-columns:1fr}
+  .list-card{padding:6px 22px}
+  .contact-box{padding:36px 22px;border-radius:24px}
+  .cl-row{grid-template-columns:1fr auto;gap:6px 12px}
+  .cl-row .k{grid-column:1 / -1}
+  nav .btn{display:none}
+  .brand-x{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">OMAR ABOUELATTA<b class="brand-x"> <span>/</span> FINANCE × AUTOMATION</b></a>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#tools">Tools</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="btn btn-primary btn-sm" href="#contact">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-top">
+      <p class="label">Accounts Payable &amp; Receivable · Paymaster · Hotel Finance · n8n</p>
+      <p class="sec-num">00 / 07</p>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <h1>Hotel finance, <span class="accent">reconciled</span> — and automated.</h1>
+        <p class="lede">I'm <strong>Omar Abouelatta</strong>, an accountant and <strong>Paymaster</strong> with <strong>6+ years</strong> in Accounts Payable, Accounts Receivable, payroll and cash control in luxury resort finance across the UAE and Egypt. <strong>Xero Certified Specialist</strong>. I also build <strong>n8n workflows</strong> that take the repetitive work out of AR, AP and reconciliations.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Work with me →</a>
+          <a class="btn btn-ghost" href="#services">View services</a>
+        </div>
+        <p class="avail"><span class="dot" aria-hidden="true"></span> Available immediately · Open to relocation &amp; remote work</p>
+      </div>
+      <div class="portrait">
+        <div class="portrait-frame">
+          <img src="/portfolio/omar.jpg" alt="Portrait of Omar Abouelatta" width="500" height="500">
+          <div class="portrait-meta">
+            <span>CHANTHABURI, THAILAND</span>
+            <span class="stamp">AVAILABLE</span>
+          </div>
+        </div>
+        <div class="float-card">
+          <div class="ic">AR</div>
+          <p><b>Daily AR control — ready for review</b>Invoices checked against contracts before they're sent.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="numbers">
+  <div class="wrap">
+    <div class="num-grid">
+      <div class="num rv"><p class="v">6<em>+</em></p><p class="k">years in hotel &amp; resort finance (UAE and Egypt)</p></div>
+      <div class="num rv"><p class="v">500<em>+</em></p><p class="k">vendor invoices a month (500–600), 90–95% paid on time</p></div>
+      <div class="num rv"><p class="v">45<em>→</em>30</p><p class="k">days DSO, with a 95% collection rate on city ledger</p></div>
+      <div class="num rv"><p class="v">&lt;0.5<em>%</em></p><p class="k">payroll error rate as Paymaster for 300–500 employees</p></div>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="rv">
+      <span class="label">01 — About</span>
+      <h2 style="margin-top:18px">Accountant first. <span class="accent">Automation</span> where it saves real hours.</h2>
+    </div>
+    <div class="about-text rv">
+      <p>Since August 2025 I've held the full <strong>Accounts Payable Executive</strong> role at Centara Mirage Beach Resort in Dubai, handling 500 to 600 vendor invoices a month with zero unreconciled cash variances. Before that, I spent years on the receivables side: city ledger, credit control, collections and month-end reporting.</p>
+      <p>The reconciliations, accruals and month-end close I run every month <strong>transfer to any industry</strong>. On top of that, I build n8n workflows for finance teams: data intake from Excel and e-mail, automated reconciliations, aging and credit control, and AI-drafted summaries that wait for a manager's approval before anything is sent.</p>
+      <div class="chips">
+        <span class="chip">Arabic — Native</span>
+        <span class="chip">English — Fluent</span>
+        <span class="chip">B.Com, Accounting</span>
+        <span class="chip">Xero Certified Specialist L3</span>
+        <span class="chip">General Cashier &amp; Paymaster</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="label">02 — Services</span>
+        <h2>What I can do for your finance team.</h2>
+      </div>
+      <p class="sec-num">3 GROUPS · 18 SERVICES</p>
+    </div>
+
+    <div class="svc-tabs" role="tablist" aria-label="Service groups">
+      <button class="svc-tab" role="tab" aria-selected="true" aria-controls="svc-acc" id="tab-acc">Accounting</button>
+      <button class="svc-tab" role="tab" aria-selected="false" aria-controls="svc-auto" id="tab-auto">Accounting Automation</button>
+      <button class="svc-tab" role="tab" aria-selected="false" aria-controls="svc-sw" id="tab-sw">Software</button>
+    </div>
+
+    <div class="svc-panel on" id="svc-acc" role="tabpanel" aria-labelledby="tab-acc">
+      <p class="svc-intro">Hands-on accounting for hotels, resorts and any business that needs clean ledgers, on-time payments and a calm month-end.</p>
+      <div class="cards">
+        <article class="card paper">
+          <p class="tag">AP · Full cycle</p>
+          <h3>Accounts Payable</h3>
+          <p>Invoice receipt, 3-way PO match, approval, ERP posting, payment runs and supplier-statement reconciliation, so vendors get paid on time and nothing slips.</p>
+          <p class="proof">Overdue invoices cut from 15% to 5% in 3 months</p>
+        </article>
+        <article class="card">
+          <p class="tag">AR · Credit control</p>
+          <h3>Accounts Receivable &amp; Collections</h3>
+          <p>City ledger billing checked against contracts, structured follow-up and payment plans for travel agents and corporate accounts.</p>
+          <p class="proof">DSO 45 → 30 days · aged 60+ balances down 35%</p>
+        </article>
+        <article class="card">
+          <p class="tag">Payroll · Cash</p>
+          <h3>Paymaster &amp; Payroll</h3>
+          <p>Payroll inputs verified with HR against authorization forms, plus weekly variance, overtime and payroll reports for finance leadership.</p>
+          <p class="proof">300–500 employees · error rate below 0.5%</p>
+        </article>
+        <article class="card">
+          <p class="tag">Reconciliation</p>
+          <h3>Bank, Vendor &amp; Card Reconciliations</h3>
+          <p>Multi-account bank reconciliations, supplier statements, credit-card settlements, commissions and VAT on commission, resolved before close.</p>
+          <p class="proof">3 bank accounts · 10–15 discrepancies cleared monthly</p>
+        </article>
+        <article class="card">
+          <p class="tag">Close · Reporting</p>
+          <h3>Month-End Closing &amp; Reporting</h3>
+          <p>Accruals, prepayments, journal entries and GL posting, with aging, DSO, cash-receipt and credit-memo reports delivered on schedule.</p>
+          <p class="proof">100% of bank credits posted before closing</p>
+        </article>
+        <article class="card">
+          <p class="tag">Cash · Controls</p>
+          <h3>Cash Control &amp; Audit Support</h3>
+          <p>Multi-currency deposits, petty cash and due backs, plus audit-ready documentation and internal controls for internal and external audits.</p>
+          <p class="proof">Zero unreconciled variances over 15 months</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="svc-panel" id="svc-auto" role="tabpanel" aria-labelledby="tab-auto">
+      <p class="svc-intro">n8n workflows built by an accountant, for accountants: they do the checking and matching, and a person still approves what goes out.</p>
+      <div class="cards">
+        <article class="card paper">
+          <p class="tag">n8n · Intake</p>
+          <h3>Finance Data Intake</h3>
+          <p>Excel files and e-mail attachments pulled in automatically, with English or Arabic headers, and stored in structured data tables ready to work with.</p>
+          <p class="proof">Gmail · Excel · upload forms · data tables</p>
+        </article>
+        <article class="card">
+          <p class="tag">n8n · Matching</p>
+          <h3>Automated Reconciliations</h3>
+          <p>Statements vs invoices, bank receipts vs statements with payment allocation, and card batches vs bank settlement, with commission checked against the agreed rate.</p>
+          <p class="proof">SOA · bank · POS card batches</p>
+        </article>
+        <article class="card">
+          <p class="tag">n8n · AR control</p>
+          <h3>Invoice &amp; Contract Checks</h3>
+          <p>Every invoice rate and promotion checked against the contract terms, and wrong invoices held before they ever reach the client.</p>
+          <p class="proof">Period · room type · rate · extras</p>
+        </article>
+        <article class="card">
+          <p class="tag">n8n · Credit</p>
+          <h3>Aging &amp; Credit Control</h3>
+          <p>Daily aging with a reason for every overdue item, credit-limit control, and invoices dispatched per contract terms with escalating reminders.</p>
+          <p class="proof">Due dates · reminders · credit limits</p>
+        </article>
+        <article class="card">
+          <p class="tag">n8n · Reporting</p>
+          <h3>Excel Reports &amp; Closing Packs</h3>
+          <p>Ready-to-use Excel reports and month-end closing packs for finance, plus posting sheets for the team. The workflow never writes to your system on its own.</p>
+          <p class="proof">Excel · Google Sheets</p>
+        </article>
+        <article class="card">
+          <p class="tag">AI · Human-in-the-loop</p>
+          <h3>AI-Drafted Summaries &amp; E-mails</h3>
+          <p>Google Gemini drafts the manager summary and customer e-mails. Nothing is sent until a manager approves it.</p>
+          <p class="proof">Google Gemini · approval step</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="svc-panel" id="svc-sw" role="tabpanel" aria-labelledby="tab-sw">
+      <p class="svc-intro">Day-to-day work in the systems finance teams already run, from cloud bookkeeping to hotel PMS and point-of-sale.</p>
+      <div class="cards">
+        <article class="card paper">
+          <p class="tag">Certified · Level 3</p>
+          <h3>Xero Bookkeeping</h3>
+          <p>Bookkeeping, bank reconciliation and reporting in Xero, backed by all three Xero certifications.</p>
+          <p class="proof">Xero Certified Specialist · valid until 2027</p>
+        </article>
+        <article class="card">
+          <p class="tag">Cloud accounting</p>
+          <h3>QuickBooks Bookkeeping</h3>
+          <p>Recording transactions, reconciling accounts and producing reports in QuickBooks for small businesses.</p>
+          <p class="proof">QuickBooks Online</p>
+        </article>
+        <article class="card">
+          <p class="tag">Hotel ERP</p>
+          <h3>Sun Systems Posting</h3>
+          <p>AP and GL posting, journal entries and month-end work in Sun Systems, the finance ERP used across many hotel groups.</p>
+          <p class="proof">GL · AP · journals</p>
+        </article>
+        <article class="card">
+          <p class="tag">Hotel PMS</p>
+          <h3>Opera PMS — AR &amp; City Ledger</h3>
+          <p>City ledger and guest ledger work in Opera: billing, credit-card and commission postings, and clearing aged accounts.</p>
+          <p class="proof">Opera AR ledger · Micros POS</p>
+        </article>
+        <article class="card">
+          <p class="tag">Advanced Excel</p>
+          <h3>Excel Reports &amp; Dashboards</h3>
+          <p>Pivot tables, VLOOKUP and aging dashboards that turn raw ledger exports into reports managers can act on.</p>
+          <p class="proof">Pivot tables · VLOOKUP · aging dashboards</p>
+        </article>
+        <article class="card">
+          <p class="tag">Google Workspace · AI</p>
+          <h3>Sheets, Gmail &amp; Gemini</h3>
+          <p>Google Sheets reporting, Gmail automation and Google Gemini for drafting summaries, connected together with n8n.</p>
+          <p class="proof">Google Sheets · Gmail · Gemini · n8n</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="label">03 — Projects</span>
+        <h2>Automation I've built.</h2>
+      </div>
+      <p class="sec-num">02 PROJECTS</p>
+    </div>
+
+    <div class="proj rv">
+      <div class="proj-body">
+        <p class="label" style="color:var(--accent)">Portfolio project · 50-node workflow</p>
+        <h3 style="margin-top:12px">Hotel AR Automation for Opera PMS</h3>
+        <div class="stack">
+          <span class="chip">n8n</span><span class="chip">Gmail</span><span class="chip">Google Gemini</span><span class="chip">Excel</span>
+        </div>
+        <ul>
+          <li>Reads the Opera AR ledger, bank statements, SOAs, sales contracts and POS card batches from e-mail or an upload form.</li>
+          <li>Daily AR control: checks each invoice rate and promotion against the contract and holds wrong invoices before they're sent.</li>
+          <li>Reconciles SOA vs invoices, bank receipts with payment allocation, and credit cards from POS batch to bank settlement.</li>
+          <li>Aging with a reason for every invoice over 60 days, credit-limit control and a month-end closing pack in Excel.</li>
+          <li>Gemini drafts the AR manager summary and customer e-mails. Nothing goes out before the manager approves.</li>
+        </ul>
+      </div>
+      <div class="invoice" aria-label="Example of an invoice held by the workflow (demo data)">
+        <div class="inv-head">
+          <div>
+            <p class="label">Invoice · DEMO-20481</p>
+            <p class="t">Corporate account · 3 nights</p>
+          </div>
+          <span class="stamp">HELD</span>
+        </div>
+        <div class="inv-table">
+          <div class="inv-row h"><span>LINE</span><span class="n">CONTRACT</span><span class="n">INVOICED</span></div>
+          <div class="inv-row bad"><span>Room · Deluxe King × 3</span><span class="n">360.00</span><span class="n">425.00</span></div>
+          <div class="inv-row"><span>Extra adult × 3</span><span class="n">60.00</span><span class="n">60.00</span></div>
+          <div class="inv-row"><span>Breakfast package</span><span class="n">45.00</span><span class="n">45.00</span></div>
+          <div class="inv-row bad"><span><b>Total</b></span><span class="n">465.00</span><span class="n">530.00</span></div>
+        </div>
+        <div class="why"><b>WHY</b><span>A long-stay promotion applies to these dates but wasn't posted. The invoice is held and corrected before the client ever sees it.</span></div>
+        <p class="demo">DEMO DATA · NO REAL CLIENT</p>
+      </div>
+    </div>
+
+    <div class="proj-2 rv">
+      <div>
+        <p class="label" style="color:var(--accent)">Personal project</p>
+        <h3 style="margin-top:10px">AI Screening &amp; Reporting Workflow</h3>
+        <p>Collects listings from 16 online sources, scores each one with Gemini against set criteria, removes duplicates with a data table, generates PDF documents and e-mails a formatted daily report.</p>
+      </div>
+      <div class="pipeline" aria-label="Workflow steps">
+        <span>16 sources</span><i>→</i><span>Gemini score</span><i>→</i><span>De-dupe</span><i>→</i><span>PDF + e-mail</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="label">04 — Experience</span>
+        <h2>Six years across three hotels.</h2>
+      </div>
+      <p class="sec-num" id="car-count">01 / 05</p>
+    </div>
+
+    <div class="carousel rv">
+      <div class="track" id="track" tabindex="0" aria-label="Work experience">
+        <article class="slide paper">
+          <div class="slide-top"><span>AUG 2025 — OCT 2026</span><span>DUBAI, UAE</span></div>
+          <h3>Accounts Payable Executive (Acting)</h3>
+          <p class="co"><b>Centara Mirage Beach Resort</b></p>
+          <ul>
+            <li>500–600 vendor invoices a month across 250–300 vendors through the full AP cycle, 90–95% paid on time.</li>
+            <li>Overdue invoices reduced from 15% to 5% within 3 months.</li>
+            <li>Bank reconciliations across 3 accounts; zero major AP audit findings.</li>
+            <li>20+ vendor disputes resolved monthly; recurring complaints down 40%.</li>
+          </ul>
+          <p class="note">Official title: General Cashier &amp; Paymaster, entrusted with the full AP Executive role</p>
+        </article>
+        <article class="slide">
+          <div class="slide-top"><span>APR 2024 — OCT 2026</span><span>DUBAI, UAE</span></div>
+          <h3>General Cashier &amp; Paymaster</h3>
+          <p class="co"><b>Centara Mirage Beach Resort</b></p>
+          <ul>
+            <li>Daily multi-currency deposits (AED, USD, EUR) from 6+ outlets with zero unreconciled variances over 15 months.</li>
+            <li>Payroll inputs for 300–500 employees with an error rate below 0.5%.</li>
+            <li>Weekly variance, overtime and payroll reports to the Hotel Controller and Director of Finance.</li>
+            <li>Petty cash and due backs reconciled within 24 hours.</li>
+          </ul>
+        </article>
+        <article class="slide">
+          <div class="slide-top"><span>JUL 2022 — MAR 2024</span><span>DUBAI, UAE</span></div>
+          <h3>Accounts Receivable Clerk</h3>
+          <p class="co"><b>Centara Mirage Beach Resort</b></p>
+          <ul>
+            <li>City ledger billing and collections for 50+ travel agents and corporates: 95% collection rate, DSO from 45 to 30 days.</li>
+            <li>Credit-card payments, commissions and VAT on commission posted with 100% accuracy.</li>
+            <li>Aged 60+ day balances reduced by 35%.</li>
+          </ul>
+        </article>
+        <article class="slide">
+          <div class="slide-top"><span>SEP 2021 — JUN 2022</span><span>MARSA ALAM, EGYPT</span></div>
+          <h3>Accounts Receivable Specialist</h3>
+          <p class="co"><b>Iberotel Costa Mares</b></p>
+          <ul>
+            <li>Monthly invoicing checked against contracts for 30+ tour operator and corporate accounts.</li>
+            <li>Contractual billing discrepancies reduced by 25%.</li>
+            <li>Collections, account reconciliations and AR month-end closing.</li>
+          </ul>
+        </article>
+        <article class="slide">
+          <div class="slide-top"><span>SEP 2019 — SEP 2021</span><span>SHARM EL SHEIKH, EGYPT</span></div>
+          <h3>Accounts Receivable Accountant</h3>
+          <p class="co"><b>Steigenberger Alcazar Hotel</b></p>
+          <ul>
+            <li>Verified and posted receivables and reconciled the AR ledger.</li>
+            <li>Resolved billing issues and reported status to management.</li>
+            <li>Cleared 15+ aged guest and city ledger accounts during annual audit preparation.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="car-ctrl">
+        <p class="label">Swipe or use the arrows</p>
+        <div class="car-btns">
+          <button class="car-btn" id="prev" aria-label="Previous role">←</button>
+          <button class="car-btn" id="next" aria-label="Next role">→</button>
+        </div>
+      </div>
+      <div class="early">
+        <span class="label" style="width:100%">Early career</span>
+        <span><b>Customer Service Specialist</b> · Awlad Ragab, Cairo · 2016–2017</span>
+        <span><b>Cashier</b> · Jaz Almaza Beach Resort, Marsa Matruh · 2014–2015</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="label">05 — Tools &amp; Systems</span>
+        <h2>The stack I work in.</h2>
+      </div>
+      <p class="sec-num">10 SYSTEMS</p>
+    </div>
+    <div class="tools rv">
+      <div class="tool hl"><p class="nm">Xero</p><p class="ds">Certified Specialist, Level 3</p></div>
+      <div class="tool"><p class="nm">QuickBooks</p><p class="ds">Cloud bookkeeping</p></div>
+      <div class="tool"><p class="nm">Sun Systems</p><p class="ds">Finance ERP · AP &amp; GL posting</p></div>
+      <div class="tool"><p class="nm">Opera PMS</p><p class="ds">Hotel AR, city &amp; guest ledger</p></div>
+      <div class="tool"><p class="nm">Micros POS</p><p class="ds">Outlet sales &amp; card batches</p></div>
+      <div class="tool"><p class="nm">Microsoft Excel</p><p class="ds">Advanced: pivots, VLOOKUP, dashboards</p></div>
+      <div class="tool"><p class="nm">n8n</p><p class="ds">Workflow automation</p></div>
+      <div class="tool"><p class="nm">Google Gemini</p><p class="ds">AI drafting &amp; scoring</p></div>
+      <div class="tool"><p class="nm">Google Sheets</p><p class="ds">Reporting &amp; data tables</p></div>
+      <div class="tool"><p class="nm">Gmail</p><p class="ds">E-mail automation</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <span class="label">06 — Certifications &amp; Education</span>
+        <h2>Credentials.</h2>
+      </div>
+    </div>
+    <div class="cert-grid rv">
+      <div class="list-card">
+        <div class="li"><div><p class="t">Xero Certified Specialist — Level 3</p><p class="s">Xero</p></div><p class="y acc">2026 · VALID TO 2027</p></div>
+        <div class="li"><div><p class="t">Xero Certified Professional — Level 2</p><p class="s">Xero</p></div><p class="y acc">2026 · VALID TO 2027</p></div>
+        <div class="li"><div><p class="t">Xero Certified Associate — Level 1</p><p class="s">Xero</p></div><p class="y acc">2026 · VALID TO 2027</p></div>
+        <div class="li"><div><p class="t">Professionalism in the Office</p><p class="s">Alison</p></div><p class="y">2022</p></div>
+        <div class="li"><div><p class="t">Time Management Mastery</p><p class="s">Alison</p></div><p class="y">2022</p></div>
+      </div>
+      <div class="list-card">
+        <div class="li"><div><p class="t">Bachelor of Commerce, Accounting</p><p class="s">Faculty of Commerce, English Section</p></div><p class="y">2018</p></div>
+        <div class="li"><div><p class="t">Arabic</p><p class="s">Native</p></div><p class="y">LANGUAGE</p></div>
+        <div class="li"><div><p class="t">English</p><p class="s">Fluent</p></div><p class="y">LANGUAGE</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="contact-box rv">
+      <div>
+        <span class="label" style="color:#6B6B64">07 — Contact</span>
+        <h2 style="margin-top:18px">Let's clean up your <span style="color:var(--accent-deep)">ledgers</span>.</h2>
+        <p class="sub">Open to on-site roles, remote work and freelance projects in accounting and accounting automation. Available immediately.</p>
+      </div>
+      <div class="cl">
+        <div class="cl-row"><span class="k">E-MAIL</span><a href="mailto:omarabouelatta5@gmail.com">omarabouelatta5@gmail.com</a><button class="copy" data-copy="omarabouelatta5@gmail.com">Copy</button></div>
+        <div class="cl-row"><span class="k">WHATSAPP</span><a href="https://wa.me/971506815365" target="_blank" rel="noopener">+971 50 681 5365</a><button class="copy" data-copy="+971506815365">Copy</button></div>
+        <div class="cl-row"><span class="k">PHONE</span><span class="vv">+66 61 518 8772</span><button class="copy" data-copy="+66615188772">Copy</button></div>
+        <div class="cl-row"><span class="k">LINKEDIN</span><a href="https://www.linkedin.com/in/omar-abouelatta-39a3251b7" target="_blank" rel="noopener">in/omar-abouelatta</a><button class="copy" data-copy="https://www.linkedin.com/in/omar-abouelatta-39a3251b7">Copy</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 OMAR ABOUELATTA</span>
+    <span>AP · AR · PAYMASTER · AUTOMATION</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Service tabs
+  var tabs = document.querySelectorAll('.svc-tab');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){
+        var on = x === t;
+        x.setAttribute('aria-selected', on ? 'true' : 'false');
+        document.getElementById(x.getAttribute('aria-controls')).classList.toggle('on', on);
+      });
+    });
+  });
+
+  // Experience carousel
+  var track = document.getElementById('track');
+  var slides = track.querySelectorAll('.slide');
+  var prev = document.getElementById('prev'), next = document.getElementById('next');
+  var count = document.getElementById('car-count');
+  var total = slides.length;
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function step(){ return slides[0].getBoundingClientRect().width + 20; }
+  function update(){
+    var i = Math.round(track.scrollLeft / step());
+    var maxScroll = track.scrollWidth - track.clientWidth;
+    count.textContent = pad(Math.min(i + 1, total)) + ' / ' + pad(total);
+    prev.disabled = track.scrollLeft <= 4;
+    next.disabled = track.scrollLeft >= maxScroll - 4;
+  }
+  prev.addEventListener('click', function(){ track.scrollBy({left: -step()}); });
+  next.addEventListener('click', function(){ track.scrollBy({left: step()}); });
+  track.addEventListener('scroll', function(){ window.requestAnimationFrame(update); }, {passive:true});
+  track.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({left: step()}); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); track.scrollBy({left: -step()}); }
+  });
+  window.addEventListener('resize', update);
+  update();
+
+  // Copy buttons
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click', function(){
+      var txt = b.getAttribute('data-copy'), orig = b.textContent;
+      function done(ok){ b.textContent = ok ? 'Copied' : 'Select'; setTimeout(function(){ b.textContent = orig; }, 1500); }
+      try {
+        navigator.clipboard.writeText(txt).then(function(){ done(true); }, function(){ done(false); });
+      } catch (e) { done(false); }
+    });
+  });
+
+  // Reveal on scroll
+  var els = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold: 0.12});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
