@@ -71,11 +71,12 @@ export function FinalCTA() {
     clearTimeout(timer.current);
     timer.current = setTimeout(() => setToast(""), 2200);
   };
+  const digits = (s: string) => s.replace(/\D/g, "");
   const rows = [
-    { k: "E-mail", v: site.email },
-    { k: "WhatsApp", v: site.whatsapp },
-    { k: "Phone", v: site.phone },
-    { k: "LinkedIn", v: site.linkedin },
+    { k: "E-mail", v: site.email, href: `mailto:${site.email}` },
+    { k: "WhatsApp", v: site.whatsapp, href: `https://wa.me/${digits(site.whatsapp)}` },
+    { k: "Phone", v: site.phone, href: `tel:+${digits(site.phone)}` },
+    { k: "LinkedIn", v: site.linkedin, href: site.linkedinUrl },
   ];
   return (
     <section className="final">
@@ -106,7 +107,9 @@ export function FinalCTA() {
           {rows.map((r) => (
             <div className="fc-row" key={r.k}>
               <span>{r.k}</span>
-              <b>{r.v}</b>
+              <a href={r.href} target={r.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">
+                {r.v}
+              </a>
               <button onClick={() => copy(r.k, r.v)} aria-label={`Copy ${r.k}`}>
                 Copy
               </button>
@@ -141,11 +144,13 @@ export function FAQ() {
         <Reveal className="faq-list" delay={100}>
           {faq.map((f, i) => (
             <div className={`faq-item ${open === i ? "open" : ""}`} key={f.q}>
-              <button onClick={() => setOpen(open === i ? -1 : i)} aria-expanded={open === i}>
-                <span>{f.q}</span>
-                <i aria-hidden="true" />
-              </button>
-              <div className="faq-a">
+              <h3 className="faq-q">
+                <button id={`faq-q-${i}`} onClick={() => setOpen(open === i ? -1 : i)} aria-expanded={open === i} aria-controls={`faq-a-${i}`}>
+                  <span>{f.q}</span>
+                  <i aria-hidden="true" />
+                </button>
+              </h3>
+              <div className="faq-a" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`} inert={open !== i}>
                 <p>{f.a}</p>
               </div>
             </div>

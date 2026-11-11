@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useState, type ReactNode } from "react";
 import { useInView } from "./Reveal";
 
 export function Kicker({ children, dark = false }: { children: ReactNode; dark?: boolean }) {
@@ -31,10 +31,16 @@ export function Logo({ size = 40 }: { size?: number }) {
   );
 }
 
-/** Counts up once visible. */
+const useIsoLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
+
+/** Counts up once visible. The server render (and no-JS / crawlers) shows the final figure. */
 export function CountUp({ to, from = 0, decimals = 0, duration = 1600 }: { to: number; from?: number; decimals?: number; duration?: number }) {
   const { ref, inView } = useInView<HTMLSpanElement>(0.4);
-  const [v, setV] = useState(from);
+  const [v, setV] = useState(to);
+  useIsoLayoutEffect(() => {
+    // rewind to the starting value before first paint, only when we are going to animate
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) setV(from);
+  }, [from]);
   useEffect(() => {
     if (!inView) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

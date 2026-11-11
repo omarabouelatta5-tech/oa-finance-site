@@ -29,9 +29,17 @@ export default function Footer() {
         <div>
           <h4>Contact</h4>
           <ul>
-            <li>{site.email}</li>
-            <li>WhatsApp {site.whatsapp}</li>
-            <li>Phone {site.phone}</li>
+            <li>
+              <a href={`mailto:${site.email}`}>{site.email}</a>
+            </li>
+            <li>
+              <a href={`https://wa.me/${site.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer">
+                WhatsApp {site.whatsapp}
+              </a>
+            </li>
+            <li>
+              <a href={`tel:+${site.phone.replace(/\D/g, "")}`}>Phone {site.phone}</a>
+            </li>
             <li>
               <a href={site.linkedinUrl} target="_blank" rel="noopener noreferrer">
                 LinkedIn · {site.linkedin}
