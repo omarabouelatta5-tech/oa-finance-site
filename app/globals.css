@@ -3490,3 +3490,48 @@ section {
 .bio-body a { color: inherit; text-decoration: underline; }
 .bio-list { margin: 4px 0 4px 1.2em; color: var(--muted); font-size: 17px; line-height: 1.6; list-style: disc; }
 .bio-list li { margin: 6px 0; }
+
+/* Demo page */
+.demo-sec {
+  padding: 72px 0 96px;
+  background: var(--paper);
+}
+.demo-video {
+  display: block;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r);
+  background: var(--ink);
+  box-shadow: 0 30px 80px rgba(21, 18, 15, 0.22);
+}
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  max-width: 1040px;
+  margin: 44px auto 0;
+}
+.demo-card {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+}
+.demo-card h3 {
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--text);
+}
+.demo-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.demo-cta {
+  margin-top: 40px;
+  text-align: center;
+}
