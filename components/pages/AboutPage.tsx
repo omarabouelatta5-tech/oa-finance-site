@@ -47,6 +47,53 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="whyus bio">
+        <div className="wrap">
+          <Reveal className="sec-head split">
+            <div>
+              <Kicker>Profile</Kicker>
+              <h2 className="h2">
+                Hotel finance accountant, <em>built for automation.</em>
+              </h2>
+            </div>
+          </Reveal>
+          <Reveal className="bio-body">
+            <p className="sec-lead">
+              Hotel finance accountant with 6+ years across AP, AR, payroll and cash control in luxury resorts, open to
+              hotel finance roles in the Maldives, Mauritius and Seychelles. On top of my accounting work, I build n8n
+              automation for hotel AR, which saves finance teams time.
+            </p>
+            <p className="sec-lead">
+              Most recently I was Acting Accounts Payable Executive at Centara Mirage Beach Resort Dubai, processing
+              500–600 vendor invoices monthly for 250–300 suppliers while maintaining a 90–95% on-time payment rate.
+              Before that, I ran cash operations and payroll for 300–500 employees as General Cashier &amp; Paymaster,
+              and managed city ledger collections and credit card reconciliation as an AR Clerk.
+            </p>
+            <p className="sec-lead">
+              Recently I started building finance automation with n8n, beginning with what I know best: hotel AR. My
+              first project, Hotel AR Autopilot, runs 8 daily controls on the exports hotels already pull (no Opera API):
+              invoice rate vs contract, agent SOA vs Opera, bank vs SOA vs invoices, bank receipts vs Opera postings,
+              card settlements and commission, dispatch reminders, aging, and credit control. On a demo month it flagged
+              11 issues in 27 seconds, and nothing goes out to an agent without AR manager approval.
+            </p>
+            <ul className="bio-list">
+              <li>Full-cycle hotel finance: AP, AR, payroll, cash control, month-end closing, audit support</li>
+              <li>Finance automation: n8n workflows, AI-drafted agent emails with human approval</li>
+              <li>Daily systems: Opera Cloud, Sun Systems, Micros POS, Xero, QuickBooks Online</li>
+              <li>Advanced Excel for reconciliation and reporting</li>
+              <li>Native Arabic + fluent English, serving global guests and suppliers</li>
+            </ul>
+            <p className="sec-lead">
+              Available immediately · Open to relocate: Maldives, Mauritius, Seychelles (and worldwide) · Open to remote
+              roles in hotel finance and finance automation
+            </p>
+            <p className="sec-lead">
+              <a href="mailto:omarabouelatta5@gmail.com">omarabouelatta5@gmail.com</a>
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="whyus">
         <div className="wrap">
           <Reveal className="sec-head split">

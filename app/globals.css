@@ -3483,3 +3483,10 @@ section {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* About: profile section */
+.bio-body { display: grid; gap: 18px; max-width: 760px; margin-top: 8px; }
+.bio-body .sec-lead { max-width: none; }
+.bio-body a { color: inherit; text-decoration: underline; }
+.bio-list { margin: 4px 0 4px 1.2em; color: var(--muted); font-size: 17px; line-height: 1.6; list-style: disc; }
+.bio-list li { margin: 6px 0; }
