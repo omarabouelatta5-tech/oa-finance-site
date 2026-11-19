@@ -215,6 +215,11 @@ export default function AboutPage() {
                     <div>
                       <b>{c.name}</b>
                       <span>{c.org}</span>
+                      {c.url && (
+                        <a href={c.url} target="_blank" rel="noopener noreferrer">
+                          View certificate
+                        </a>
+                      )}
                     </div>
                     <small>{c.date}</small>
                   </li>

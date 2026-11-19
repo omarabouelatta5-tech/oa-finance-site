@@ -67,7 +67,7 @@ export const tags = [
   "English — Fluent",
   "B.Com, Accounting",
   "Xero Certified Specialist L3",
-"QuickBooks Online Accountant Certified",
+  "QuickBooks Online Accountant Certified",
   "General Cashier & Paymaster",
 ];
 
@@ -345,9 +345,11 @@ export const tools = [
   { name: "Gmail", note: "E-mail automation" },
 ];
 
-export const credentials = {
+export type Credential = { name: string; org: string; date: string; hot?: boolean; url?: string };
+
+export const credentials: { certs: Credential[]; edu: Credential[] } = {
   certs: [
-{ name: "QuickBooks Online Accountant Certification", org: "Intuit QuickBooks", date: "Nov 2026", hot: true },
+    { name: "QuickBooks Online Accountant Certification", org: "Intuit QuickBooks", date: "Nov 2026", hot: true, url: "https://drive.google.com/file/d/10sY7aWbQtbGKN86s24yuX0aYxBV5Sw7K/view?usp=drivesdk" },
     { name: "Xero Certified Specialist — Level 3", org: "Xero", date: "2026 · Valid to 2027", hot: true },
     { name: "Xero Certified Professional — Level 2", org: "Xero", date: "2026 · Valid to 2027", hot: true },
     { name: "Xero Certified Associate — Level 1", org: "Xero", date: "2026 · Valid to 2027", hot: true },

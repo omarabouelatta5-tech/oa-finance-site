@@ -52,7 +52,7 @@ export default function HomePage() {
             </div>
             <ul className="trust">
               <li>
-                <b>Xero</b> Certified Specialist
+                <b>Xero</b> Specialist · <b>QuickBooks</b> Certified
               </li>
               <li>
                 <b>Zero</b> unreconciled variances · 15 months
@@ -222,8 +222,8 @@ export default function HomePage() {
               <span className="t-tag">Your systems</span>
               <h3>No migration needed</h3>
               <div className="soft-grid">
-                {["Xero · Certified", "QuickBooks", "Sun Systems", "Opera PMS", "Micros POS", "Excel", "n8n", "Gemini"].map((s) => (
-                  <span key={s} className={s.startsWith("Xero") ? "hl" : ""}>
+                {["Xero · Certified", "QuickBooks · Certified", "Sun Systems", "Opera PMS", "Micros POS", "Excel", "n8n", "Gemini"].map((s) => (
+                  <span key={s} className={s.includes("Certified") ? "hl" : ""}>
                     {s}
                   </span>
                 ))}
