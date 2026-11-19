@@ -76,7 +76,8 @@ section{padding:110px 0;border-bottom:1px solid var(--line)}
 .portrait-frame img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;background:#222}
 .portrait-meta{display:flex;justify-content:space-between;align-items:center;padding:14px 6px 2px;color:var(--ink);font-family:var(--mono);font-size:13px;letter-spacing:.06em}
 .stamp{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.1em;padding:7px 12px;border:2px solid var(--accent-deep);color:var(--accent-deep);border-radius:8px;transform:rotate(-4deg)}
-.float-card{position:absolute;left:-46px;bottom:64px;background:var(--ink-3);border:1px solid var(--line);border-radius:18px;padding:16px 20px;display:flex;gap:14px;align-items:center;box-shadow:0 20px 50px rgba(0,0,0,.45);max-width:320px}
+.float-stack{position:absolute;left:-46px;bottom:64px;display:flex;flex-direction:column;gap:12px;max-width:320px}
+.float-card{background:var(--ink-3);border:1px solid var(--line);border-radius:18px;padding:16px 20px;display:flex;gap:14px;align-items:center;box-shadow:0 20px 50px rgba(0,0,0,.45)}
 .float-card .ic{flex:0 0 44px;height:44px;border-radius:12px;background:var(--accent);color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:600;font-size:14px}
 .float-card p{font-size:14px;color:var(--soft);line-height:1.35}
 .float-card b{display:block;color:var(--text);font-size:15px;font-weight:600}
@@ -217,7 +218,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 @media (max-width:1020px){
   .hero-grid{grid-template-columns:1fr;gap:56px}
   .portrait{max-width:440px}
-  .float-card{left:auto;right:-10px;bottom:-26px}
+  .float-stack{left:auto;right:-10px;bottom:-26px}
   .num-grid{grid-template-columns:repeat(2,1fr)}
   .num{border-bottom:1px solid var(--line)}
   .num:nth-child(2){border-right:0}
@@ -240,7 +241,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
   .hero-top{margin-bottom:36px}
   .hero-top .sec-num{display:none}
   .hero .lede{font-size:18px}
-  .float-card{position:relative;right:auto;bottom:auto;margin-top:18px;max-width:none}
+  .float-stack{position:relative;right:auto;bottom:auto;margin-top:18px;max-width:none}
   .num{padding:30px 14px 28px}
   .num:nth-child(odd){padding-left:0}
   .cards{grid-template-columns:1fr}
@@ -298,9 +299,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
             <span class="stamp">AVAILABLE</span>
           </div>
         </div>
-        <div class="float-card">
-          <div class="ic">AR</div>
-          <p><b>Daily AR control — ready for review</b>Invoices checked against contracts before they're sent.</p>
+        <div class="float-stack">
+          <div class="float-card">
+            <div class="ic">AR</div>
+            <p><b>Daily AR control — ready for review</b>Invoices checked against contracts before they're sent.</p>
+          </div>
+          <div class="float-card">
+            <div class="ic">AP</div>
+            <p><b>Daily AP control — ready for approval</b>Vendor invoices checked against PO and receipt before the payment run.</p>
+          </div>
         </div>
       </div>
     </div>
