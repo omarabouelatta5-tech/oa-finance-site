@@ -3538,8 +3538,9 @@ section {
 
 .cert-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
+  align-items: end;
   margin-top: 24px;
 }
 .cert-gallery a { display: block; color: inherit; text-decoration: none; }
@@ -3549,6 +3550,9 @@ section {
   display: block;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.12);
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.04);
   transition: transform 0.25s ease;
 }
 .cert-gallery a:hover img { transform: translateY(-4px); }
