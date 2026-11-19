@@ -67,6 +67,7 @@ export const tags = [
   "English — Fluent",
   "B.Com, Accounting",
   "Xero Certified Specialist L3",
+"QuickBooks Online Accountant Certified",
   "General Cashier & Paymaster",
 ];
 
@@ -200,10 +201,10 @@ export const services: Service[] = [
   },
   {
     group: "software",
-    tag: "Cloud accounting",
+    tag: "Certified · Intuit",
     title: "QuickBooks Bookkeeping",
-    body: "Recording transactions, reconciling accounts and producing reports in QuickBooks for small businesses.",
-    metric: "QuickBooks Online",
+    body: "Recording transactions, reconciling accounts and producing reports in QuickBooks for small businesses, backed by the QuickBooks Online Accountant certification.",
+    metric: "QuickBooks Online Accountant Certified · Nov 2026",
   },
   {
     group: "software",
@@ -333,7 +334,7 @@ export const earlyCareer = [
 
 export const tools = [
   { name: "Xero", note: "Certified Specialist, Level 3", certified: true },
-  { name: "QuickBooks", note: "Cloud bookkeeping" },
+  { name: "QuickBooks", note: "Online Accountant Certified (Intuit)", certified: true },
   { name: "Sun Systems", note: "Finance ERP · AP & GL posting" },
   { name: "Opera PMS", note: "Hotel AR, city & guest ledger" },
   { name: "Micros POS", note: "Outlet sales & card batches" },
@@ -346,6 +347,7 @@ export const tools = [
 
 export const credentials = {
   certs: [
+{ name: "QuickBooks Online Accountant Certification", org: "Intuit QuickBooks", date: "Nov 2026", hot: true },
     { name: "Xero Certified Specialist — Level 3", org: "Xero", date: "2026 · Valid to 2027", hot: true },
     { name: "Xero Certified Professional — Level 2", org: "Xero", date: "2026 · Valid to 2027", hot: true },
     { name: "Xero Certified Associate — Level 1", org: "Xero", date: "2026 · Valid to 2027", hot: true },
@@ -387,7 +389,7 @@ export const audiences = [
   {
     title: "Small businesses",
     body: "Clean books in Xero or QuickBooks, bank reconciliations and reports you can read, without hiring a full-time accountant.",
-    points: ["Xero Certified Specialist", "Monthly bookkeeping & reconciliations", "Reports that make sense"],
+    points: ["Xero & QuickBooks Certified", "Monthly bookkeeping & reconciliations", "Reports that make sense"],
   },
   {
     title: "Finance teams",
@@ -428,7 +430,7 @@ export const why = [
 export const faq = [
   { q: "Do you only work with hotels?", a: "No. Hotels and resorts are where the experience comes from, but the reconciliations, accruals and month-end close transfer to any business. Small businesses on Xero or QuickBooks are a good fit too." },
   { q: "Can you work remotely?", a: "Yes. Based in Chanthaburi, Thailand, working remotely worldwide, and open to on-site roles and relocation for the right engagement." },
-  { q: "Which systems do you work in?", a: "Xero (Certified Specialist, Level 3), QuickBooks Online, Sun Systems, Opera PMS, Micros POS, advanced Excel, Google Sheets, Gmail, n8n and Google Gemini." },
+  { q: "Which systems do you work in?", a: "Xero (Certified Specialist, Level 3), QuickBooks Online (Accountant Certified), Sun Systems, Opera PMS, Micros POS, advanced Excel, Google Sheets, Gmail, n8n and Google Gemini." },
   { q: "How does the automation stay safe?", a: "Workflows never write to your accounting system on their own. They read, check, match and prepare; a person reviews and posts. AI-drafted e-mails and summaries wait for a manager's approval." },
   { q: "How do we start?", a: "Book a free consultation. We talk about your books, your systems and what takes up your team's time, then you get a clear proposal." },
 ];
