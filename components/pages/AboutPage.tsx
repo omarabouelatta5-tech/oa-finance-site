@@ -232,6 +232,16 @@ export default function AboutPage() {
               </ul>
             </Reveal>
           </div>
+          <Reveal className="cert-gallery" delay={180}>
+            {credentials.certs
+              .filter((c) => c.img)
+              .map((c) => (
+                <a key={c.name} href={c.url} target="_blank" rel="noopener noreferrer">
+                  <img src={c.img} alt={`${c.name} certificate, Omar Abouelatta`} loading="lazy" />
+                  <span>{c.name.replace("Xero Certified ", "Xero ")}</span>
+                </a>
+              ))}
+          </Reveal>
         </div>
       </section>
 

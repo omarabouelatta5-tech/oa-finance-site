@@ -345,14 +345,14 @@ export const tools = [
   { name: "Gmail", note: "E-mail automation" },
 ];
 
-export type Credential = { name: string; org: string; date: string; hot?: boolean; url?: string };
+export type Credential = { name: string; org: string; date: string; hot?: boolean; url?: string; img?: string };
 
 export const credentials: { certs: Credential[]; edu: Credential[] } = {
   certs: [
     { name: "QuickBooks Online Accountant Certification", org: "Intuit QuickBooks", date: "Nov 2026", hot: true, url: "https://drive.google.com/file/d/10sY7aWbQtbGKN86s24yuX0aYxBV5Sw7K/view?usp=drivesdk" },
-    { name: "Xero Certified Specialist — Level 3", org: "Xero", date: "2026 · Valid to 2027", hot: true, url: "https://drive.google.com/file/d/1c8pXB4tW8s2TNxSGD40fyzuOuLZMmG1o/view?usp=drivesdk" },
-    { name: "Xero Certified Professional — Level 2", org: "Xero", date: "2026 · Valid to 2027", hot: true, url: "https://drive.google.com/file/d/1C6P2VVL-RfKQPcKB9DoVchPXzHnB9gyT/view?usp=drivesdk" },
-    { name: "Xero Certified Associate — Level 1", org: "Xero", date: "2026 · Valid to 2027", hot: true, url: "https://drive.google.com/file/d/1oimiMZgLQ4w5eC0x4PWOWDjLmx54-93k/view?usp=drivesdk" },
+    { name: "Xero Certified Specialist — Level 3", org: "Xero", date: "Oct 2026 · Valid to Oct 2027", hot: true, url: "/certs/xero-specialist-l3.pdf", img: "/certs/xero-specialist-l3.jpg" },
+    { name: "Xero Certified Professional — Level 2", org: "Xero", date: "Oct 2026 · Valid to Oct 2027", hot: true, url: "/certs/xero-professional-l2.pdf", img: "/certs/xero-professional-l2.jpg" },
+    { name: "Xero Certified Associate — Level 1", org: "Xero", date: "Jul 2026 · Valid to Jul 2027", hot: true, url: "/certs/xero-associate-l1.pdf", img: "/certs/xero-associate-l1.jpg" },
     { name: "Professionalism in the Office", org: "Alison", date: "2022" },
     { name: "Time Management Mastery", org: "Alison", date: "2022" },
   ],
