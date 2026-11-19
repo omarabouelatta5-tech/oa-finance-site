@@ -350,9 +350,9 @@ export type Credential = { name: string; org: string; date: string; hot?: boolea
 export const credentials: { certs: Credential[]; edu: Credential[] } = {
   certs: [
     { name: "QuickBooks Online Accountant Certification", org: "Intuit QuickBooks", date: "Nov 2026", hot: true, url: "https://drive.google.com/file/d/10sY7aWbQtbGKN86s24yuX0aYxBV5Sw7K/view?usp=drivesdk" },
-    { name: "Xero Certified Specialist — Level 3", org: "Xero", date: "2026 · Valid to 2027", hot: true },
-    { name: "Xero Certified Professional — Level 2", org: "Xero", date: "2026 · Valid to 2027", hot: true },
-    { name: "Xero Certified Associate — Level 1", org: "Xero", date: "2026 · Valid to 2027", hot: true },
+    { name: "Xero Certified Specialist — Level 3", org: "Xero", date: "2026 · Valid to 2027", hot: true, url: "https://drive.google.com/file/d/1c8pXB4tW8s2TNxSGD40fyzuOuLZMmG1o/view?usp=drivesdk" },
+    { name: "Xero Certified Professional — Level 2", org: "Xero", date: "2026 · Valid to 2027", hot: true, url: "https://drive.google.com/file/d/1C6P2VVL-RfKQPcKB9DoVchPXzHnB9gyT/view?usp=drivesdk" },
+    { name: "Xero Certified Associate — Level 1", org: "Xero", date: "2026 · Valid to 2027", hot: true, url: "https://drive.google.com/file/d/1oimiMZgLQ4w5eC0x4PWOWDjLmx54-93k/view?usp=drivesdk" },
     { name: "Professionalism in the Office", org: "Alison", date: "2022" },
     { name: "Time Management Mastery", org: "Alison", date: "2022" },
   ],

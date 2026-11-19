@@ -203,6 +203,11 @@ export default function AboutPage() {
                       <div>
                         <b>{c.name.replace("Xero Certified ", "")}</b>
                         <small>{c.date}</small>
+                        {c.url && (
+                          <a href={c.url} target="_blank" rel="noopener noreferrer" style={{ display: "block", fontSize: 13, textDecoration: "underline" }}>
+                            View certificate
+                          </a>
+                        )}
                       </div>
                     </div>
                   ))}
