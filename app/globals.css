@@ -3549,10 +3549,12 @@ section {
   height: auto;
   display: block;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   aspect-ratio: 3 / 4;
   object-fit: contain;
-  background: rgba(255, 255, 255, 0.04);
+  padding: 8px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
   transition: transform 0.25s ease;
 }
 .cert-gallery a:hover img { transform: translateY(-4px); }
